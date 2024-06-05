@@ -4,97 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f3f2f1;
-            color: #323130;
-        }
-        nav {
-            background-color: #0078d4;
-            color: white;
-            padding: 15px 0;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        nav a {
-            color: white;
-            margin: 0 20px;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        .section {
-            margin: 40px 0;
-            padding: 20px;
-        }
-        .section h2 {
-            color: #0078d4;
-            border-bottom: 2px solid #0078d4;
-            padding-bottom: 10px;
-        }
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .project {
-            background: white;
-            margin: 20px 10px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            width: 30%;
-        }
-        .project img {
-            width: 100%;
-            border-radius: 8px;
-        }
-        .project .technologies {
-            margin-top: 10px;
-            display: flex;
-            justify-content: center;
-        }
-        .project .technologies img {
-            width: 30px;
-            height: 30px;
-            margin: 0 5px;
-        }
-        .contact-info {
-            margin-top: 20px;
-        }
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-        .contact-buttons button {
-            margin: 0 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #0078d4;
-            color: white;
-            transition: background-color 0.3s;
-        }
-        .contact-buttons button:hover {
-            background-color: #005a9e;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <nav>
@@ -120,18 +30,18 @@
             <div class="projects">
                 <!-- Proyecto 1 -->
                 <div class="project">
-                    <img src="ruta/a/la/imagen1.jpg" alt="Proyecto 1">
+                    <img src="img/proyectos/proyecto1.jpg" alt="Proyecto 1">
                     <h3>Proyecto 1: Informe de Ventas</h3>
                     <div class="technologies">
-                        <img src="ruta/a/icono-excel.png" alt="Excel">
+                        <img src="img/icons/excel.png" alt="Excel">
                     </div>
                 </div>
                 <!-- Proyecto 2 -->
                 <div class="project">
-                    <img src="ruta/a/la/imagen2.jpg" alt="Proyecto 2">
+                    <img src="img/proyectos/proyecto2.jpg" alt="Proyecto 2">
                     <h3>Proyecto 2: Automatización de Flujo de Trabajo</h3>
                     <div class="technologies">
-                        <img src="ruta/a/icono-power-automate.png" alt="Power Automate">
+                        <img src="img/icons/power-automate.png" alt="Power Automate">
                     </div>
                 </div>
                 <!-- Agrega más proyectos aquí -->
@@ -150,16 +60,6 @@
             </div>
         </div>
     </div>
-    <script>
-        function sendEmail() {
-            window.location.href = 'mailto:' + document.getElementById('email').innerText;
-        }
-        function copyEmail() {
-            const email = document.getElementById('email').innerText;
-            navigator.clipboard.writeText(email).then(() => {
-                alert('Correo copiado al portapapeles');
-            });
-        }
-    </script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
