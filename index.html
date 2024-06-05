@@ -10,6 +10,19 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            color: #333;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
         }
         .container {
             width: 80%;
@@ -28,39 +41,107 @@
             margin-top: 0;
         }
         .section a {
-            display: block;
-            margin-top: 10px;
             color: #007bff;
             text-decoration: none;
         }
         .section a:hover {
             text-decoration: underline;
         }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .project {
+            background: white;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 250px;
+        }
+        .project img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .project .technologies {
+            margin-top: 10px;
+        }
+        .contact-info {
+            margin-top: 20px;
+        }
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .contact-buttons button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+        .contact-buttons button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="#about">Sobre Mí</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#contact">Contacto</a>
+    </nav>
     <div class="container">
-        <h1>Mi Portafolio</h1>
-        <div class="section">
-            <h2>Excel</h2>
-            <p>Proyectos y ejemplos de mi trabajo con Excel.</p>
-            <a href="excel.html">Ver proyectos de Excel</a>
+        <div id="about" class="section">
+            <h2>Sobre Mí</h2>
+            <p>Descripción breve sobre ti.</p>
+            <div class="contact-info">
+                <p>Correo: <span id="email">tu-correo@example.com</span></p>
+                <div class="contact-buttons">
+                    <button onclick="sendEmail()">Enviar Correo</button>
+                    <button onclick="copyEmail()">Copiar Correo</button>
+                </div>
+                <p><a href="https://linkedin.com/in/tu-perfil" target="_blank">Mi LinkedIn</a></p>
+            </div>
         </div>
-        <div class="section">
-            <h2>Power Automate</h2>
-            <p>Proyectos y ejemplos de mi trabajo con Power Automate.</p>
-            <a href="power-automate.html">Ver proyectos de Power Automate</a>
-        </div>
-        <div class="section">
-            <h2>Power Apps</h2>
-            <p>Proyectos y ejemplos de mi trabajo con Power Apps.</p>
-            <a href="power-apps.html">Ver proyectos de Power Apps</a>
-        </div>
-        <div class="section">
-            <h2>Power BI</h2>
-            <p>Proyectos y ejemplos de mi trabajo con Power BI.</p>
-            <a href="power-bi.html">Ver proyectos de Power BI</a>
+        <div id="projects" class="section">
+            <h2>Proyectos</h2>
+            <div class="projects">
+                <!-- Proyecto 1 -->
+                <div class="project">
+                    <img src="ruta/a/la/imagen1.jpg" alt="Proyecto 1">
+                    <h3>Proyecto 1: Informe de Ventas</h3>
+                    <div class="technologies">
+                        <img src="ruta/a/icono-excel.png" alt="Excel">
+                    </div>
+                </div>
+                <!-- Proyecto 2 -->
+                <div class="project">
+                    <img src="ruta/a/la/imagen2.jpg" alt="Proyecto 2">
+                    <h3>Proyecto 2: Automatización de Flujo de Trabajo</h3>
+                    <div class="technologies">
+                        <img src="ruta/a/icono-power-automate.png" alt="Power Automate">
+                    </div>
+                </div>
+                <!-- Agrega más proyectos aquí -->
+            </div>
         </div>
     </div>
+    <script>
+        function sendEmail() {
+            window.location.href = 'mailto:' + document.getElementById('email').innerText;
+        }
+        function copyEmail() {
+            const email = document.getElementById('email').innerText;
+            navigator.clipboard.writeText(email).then(() => {
+                alert('Correo copiado al portapapeles');
+            });
+        }
+    </script>
 </body>
 </html>
