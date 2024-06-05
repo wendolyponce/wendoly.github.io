@@ -4,39 +4,107 @@ body {
     padding: 0;
     background-color: #f3f2f1;
     color: #323130;
+    display: flex;
+}
+
+.sidebar {
+    background-color: #0078d4;
+    color: white;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile h2, .profile h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.profile h3 {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.profile a {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.profile a img {
+    width: 24px;
+    height: 24px;
 }
 
 nav {
-    background-color: #0078d4;
-    color: white;
-    padding: 15px 0;
+    margin-top: 20px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
     color: white;
-    margin: 0 20px;
+    margin: 10px 0;
     text-decoration: none;
     font-weight: 500;
+    display: block;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
-.container {
-    width: 80%;
-    margin: 20px auto;
+.contact-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info button {
+    margin: 5px 0;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #005a9e;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.contact-info button:hover {
+    background-color: #00407a;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+.section {
+    margin-bottom: 40px;
     padding: 20px;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-}
-
-.section {
-    margin: 40px 0;
-    padding: 20px;
 }
 
 .section h2 {
@@ -77,28 +145,59 @@ nav a:hover {
     margin: 0 5px;
 }
 
-.contact-info {
-    margin-top: 20px;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+    
+    .project {
+        width: 45%;
+    }
 }
 
-.contact-buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100px;
+    }
 
-.contact-buttons button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #0078d4;
-    color: white;
-    transition: background-color 0.3s;
-}
+    .profile img {
+        width: 50px;
+        height: 50px;
+    }
 
-.contact-buttons button:hover {
-    background-color: #005a9e;
+    .profile h2 {
+        font-size: 14px;
+    }
+
+    .profile h3 {
+        font-size: 10px;
+    }
+
+    .profile a img {
+        width: 16px;
+        height: 16px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .contact-info button {
+        font-size: 10px;
+    }
+
+    .content {
+        margin-left: 100px;
+        width: calc(100% - 100px);
+    }
+
+    .project {
+        width: 100%;
+    }
 }
